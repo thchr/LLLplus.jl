@@ -43,7 +43,7 @@ end
 n,m = size(H); # m-dimensional lattice in an n-dimensional space
 
 # initialization, outputs
-B      = copy(H);    # reduced lattice basis
+B      = copy!(similar(H), H) # reduced lattice basis
 num_it = 0;          # number of iterations
 T      = Matrix{Ti}(I, m, m)  # unimodular matrix
 A      = (H'*H)*1.0;          # Gram matrix of H
